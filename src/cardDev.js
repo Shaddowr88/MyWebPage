@@ -9,59 +9,49 @@ import '../src/App.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
-        padding: theme.spacing(1),
-        maxWidth: 600,
+        
         marginTop: 100,
-        alignContent: 'center',
+        overflow:"hidden",
+        display: 'flex',
+        //flexDirection: 'column',
+        flexWrap: 'wrap',
+        //justifyContent: "space-around",
     },
 
-    image: {
-        width: 50,
-        height: 50,
-        marginTop: 10,
-    },
-
-    img: {
-        margin: 'auto',
-        display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-    },
 }));
 
-const IMAGES = [
-    { id: 1, title: "BIZON", textes: "Gestionnaire de copropriété",  color: "LimeGreen", src:BIZON },
-    { id: 2, title: "B4S", textes: "Application cross plateforme", color: "Tomato", src:B4S },
-];
 
 
-export default function CardDev() {
+
+const CardDev=(props)=> {
+    const IMAGES = props.datas;
+
+
     const classes = useStyles();
     return (
-        <div className={classes.root} >
+        <Grid className={classes.root} >
             {IMAGES.map(i => (
-            <Grid container spacing={2} className="script-car-box" style={{marginBottom: "2em"}}>
-                <Grid item xs={3}>
-                    <div className={classes.image} >
+            <Grid container xl={5} md={3} xs={12} className="script-car-box" 
+                style={{marginBottom: "2em", display: 'flex', alignContent:'center',justifyContent: "center" }}>
+               
                         <Link
-                            style={{textDecoration: "none", color:"white"}}
+                            style={{textDecoration: "none"}}
                             key={i.id} to={{ pathname:`/ProjetMsw/${i.id}`,}}>
-                            <img color={i.color} src={i.src} className={classes.img} alt="complex"  />
+                            <img color={i.color} src={i.src} className= "imgIcones" alt="complex"  />
                         </Link>
-                    </div>
-                </Grid>
-                <Grid item xs={9} sm container>
-                    <Grid item xs container direction="column" spacing={2}>
+               
+                <Grid item md={9} xs={12} sm container style={{display: 'flex',
+                        flexWrap: 'wrap', justifyContent: "center", alignItems:"center"}}>
+                    <Grid item xs container direction="column" >
                         <Grid item xs>
                             <Link
-                                style={{textDecoration: "none", color:"white"}}
+                                style={{textDecoration: "none"}}
                                 key={i.id}
                                 to={{ pathname:`/ProjetMsw/${i.id}`,}}>
-                                <Typography gutterBottom variant="subtitle1" >
+                                <Typography gutterBottom variant="subtitle1" style={{fontSize:'2em', fontWeight: 'bolder'}} >
                                     {i.title}
                                 </Typography> </Link>
-                            <Typography variant="body2" gutterBottom style={{marginBottom:"2em"}} >
+                            <Typography variant="body2" gutterBottom style={{fontSize:'1em', fontWeight:'bold'}} >
                                 {i.textes}
                             </Typography>
                         </Grid>
@@ -69,6 +59,8 @@ export default function CardDev() {
                 </Grid>
              </Grid>
            ))}
-        </div>
+        </Grid>
     );
 }
+
+export default CardDev;

@@ -1,20 +1,23 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import CardGrid from "../../card";
+import CardDev from '../../cardDev';
 import Typography from "@material-ui/core/Typography";
 
-class DEsignPage extends React.Component {
-    render() {
+
+
+const DEsignPage =(props)=> {
+
+   
+  
         return <Grid container
                      direction="row-reverse"
-                     spacing={4} item xs={12} sm={12} >
-            <Grid container sm={12}  md={8} justify="flex-start" alignItems="center"
-                  style={{paddingLeft: "1em", color: "white", marginLeft:"3em", marginTop:"3em"}}>
-                <Grid item xs={12} sm={12} md={9} >
-                    <h1 style={{fontSize:"4em"}}> Graphiste freelance </h1>
-                    <h3> depuis trois ans, je collabore à la création de votre identité de marque
-                        et conçois les outils print et digitaux (logo, papeterie, packaging, siteWeb) nécessaires
-                        à la communication de vos projets.</h3>
+                     spacing={3} item xs={12} sm={12} alignItems="center" >
+            <Grid container sm={12}  md={6} justify="flex-start" alignItems="center"
+                  style={{paddingLeft: "1em", marginLeft:"3em", marginTop:"3em"}}>
+                <Grid item xs={12} sm={12} md={9} xl={12}>
+                    <h1 style={{fontSize:"3em"}}> {props.titre} </h1>
+                    <h2 style={{fontSize:"2em"}}> {props.subtitre} </h2>
+                    <h3> {props.content}</h3>
                 </Grid>
                 <Grid item xs={12} sm={9} md={10} bgcolor="background.paper"
                       color="text.primary"
@@ -25,19 +28,18 @@ class DEsignPage extends React.Component {
                 </Grid>
             </Grid>
 
-            <Grid item xs={12} sm={6} md={3} spacing={3} container zIndex="modal"
+            <Grid item xs={12} sm={6} md={4} xl={5} spacing={3} container zIndex="modal"
                   direction="row"
                   justify="center"
                   alignItems="center"
-                  style={{ borderColor: "#F27127", color: "#f5f5f5",
-                      borderRadius: "8px" }}>
-                <h1 >Projets récent</h1 ><br/> <br/>
-                <CardGrid/>
+                  style={{ borderColor: "#F27127",
+                      borderRadius: "8px", display:"flex" }}>
+                <CardDev datas={props.datas}/>
             </Grid>
 
         </Grid>
 
-    }
+ 
 
 }
 export default DEsignPage;

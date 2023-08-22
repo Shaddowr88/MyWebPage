@@ -4,55 +4,55 @@ import INTRO from "../../static/images/Banner.png";
 import Hidden from "@material-ui/core/Hidden";
 import BannerIll from "../../bannerIllus";
 
-    class   BannerIndex extends React.Component {
-        render() {
-            return <div style={{"height": "50em", justifyContent: "center", paddingBottom:"2em"}}>
+    const BannerIndex =()=> {
+       
+            return <div style={{
+                height: "50em", 
+                display: 'flex', 
+                justifyContent: 'flex-start', 
+                }}>
 
 
 
-                <Grid>
-                    <Grid md={4} xs={2} style={{}}>
+                <Grid style={{ display: 'flex', alignContent: 'space-around',marginTop:"5em"  ,flexWrap:"wrap"}}>
+                  
+                    <Grid md={4} xs={3}>
+                        <div style={{paddingLeft: "5em"}}>
+                            <Grid container spacing={1} xs={12} lg={12} >
+                                    <Grid container 
+                                    lg={12} 
+                                    xs={2} 
+                                    style={{
+                                       
+                                        color: "white"}} 
+                                        sx={{ display: 'flex', 
+                                        alignContent: 'space-around' 
+                                        }}>
+                                       <h1 style={{fontSize:"7vh" }}> Loic <span > SUNVÉ</span> <br/></h1>
+                                    </Grid>
+                                    <Grid  lg={12} xs={12} style={{fontSize:"4vh", display: 'flex', alignItems:'center'  }}>
+                                       <a> DESIGN & DEVELOPPEMENT WEB </a> 
+                                    </Grid>
+                            </Grid>
+                        </div>
+                    </Grid>
+
+                    <Grid xxl={2} md={4} xs={2} sx={{ display: 'flex', flexWrap: 'wrap'  }}>
                         <Hidden only={['xs','sm']}>
                             <div style={{position:"relative"}}>
                             </div><BannerIll/>
                         </Hidden>
 
-
                         <Hidden only={['xl','md','lg']}>
-                            <div style={{position:"relative", width:"4em", border:"black",}}>
-                                <img className="img" src={INTRO} alt="" style={{position:"absolute",
-                                    filter: "blur(4px)","height": "15em", marginTop:"3em",top: "30em", left:"3em" }}/>
-                                <img className="img" src={INTRO} alt="" style={{position:"absolute",
-                                    height:"15em", marginTop:"3em",top: "30em", left:"3em" }} />
+                            <div >
+                                <img className="img" src={INTRO} alt="" style={{
+                                    filter: "blur(3px)","height": "15em", marginTop:"3em",top: "30em", left:"3em" }}/>
+                               
                             </div>
                         </Hidden>
-                    </Grid>
-                    <Grid md={8} xs={4}>
-                        <div style={{paddingLeft: "5em"}}>
-                            <Grid container spacing={1} xs={12} lg={12}
-                                  >
-                                <Hidden only={['xs','sm']}>
-                                    <Grid container lg={5} xs={2} style={{fontSize: "9em", paddinTop: "1em", marginTop: "1em", color: "white"}}>
-                                        Loic <span >SUNVÉ</span> <br/>
-                                    </Grid>
-                                    <Grid  lg={10} xs={14} style={{fontSize: "4em", color: "white"}}>
-                                        <span> DESIGN & DEVELOPPEMENT WEB </span>
-                                    </Grid>
-                                </Hidden>
-                                <Hidden only={['xl','md','lg']}>
-                                    <Grid container lg={5} xs={2}
-                                          style={{fontSize: "6em", paddinTop: "2em", marginTop: "1em", color: "white"}}>
-                                        Loic <span >SUNVÉ</span> <br/>
-                                    </Grid>
-                                    <Grid container lg={5} xs={12} style={{fontSize: "2em", color: "white"}}>
-                                        <span style={{color: "white"}}> DESIGN & DEVELOPPEMENT WEB </span>
-                                    </Grid>
-                                </Hidden>
-                            </Grid>
-                        </div>
                     </Grid>
                 </Grid>
             </div>
         }
-    }
+    
 export default BannerIndex;
