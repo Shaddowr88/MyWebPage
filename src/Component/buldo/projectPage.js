@@ -1,10 +1,10 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from "@material-ui/core/Container";
-import CardDev from "../../cardDev";
+import CardDev from "../elements/cardDev";
 import ILLUS2 from "../../static/images/illustration02.png";
 import Hidden from "@material-ui/core/Hidden";
-import BannerIll02 from "../../bannerIllus02";
+import BannerIll02 from "../elements/bannerIllus02";
 import B4S from "../../static/images/B4S/B4S copie.png";
 import BIZON from "../../static/images/Bizon/bizon.png";
 

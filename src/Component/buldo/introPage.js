@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Carddyn from '../../carddyn'
+import Carddyn from '../elements/carddyn'
 
 
 const IntroPage =()=>{

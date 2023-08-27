@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 import ProjectPage from "./Component/buldo/projectPage";
 import ToolBarApp from "./Component/ Steering/toolBar";
 import $ from "jquery";
-import BannerIndex from "./Component/buldo/IndexBanner";
+import BannerIndex from "./Component/elements/IndexBanner";
 import Hidden from "@material-ui/core/Hidden";
 import BottomToolBarApp from "./Component/ Steering/bottumToolBar";
 import Divider from "@material-ui/core/Divider";
@@ -14,10 +14,10 @@ import DEsignPage from "./Component/buldo/DEsignPage";
 import B4S from "./static/images/B4S/B4S copie.png";
 import MSWW from "./static/images/msww/msww.png";
 import BIZON from "./static/images/Bizon/bizon.png";
-import BannerIll02 from "./bannerIllus02";
+import BannerIll02 from "./Component/elements/bannerIllus02";
 
 const DESIGN= [
-    { id: 0, title: "MS WOODWORK",textes: "Artisan Menuisier", color: "DarkOrchid", src:MSWW },
+    { id: 0, title: "MSWOODWORK",textes: "Artisan Menuisier", color: "DarkOrchid", src:MSWW },
     { id: 3, title: "delilce", textes: "presentation de delilce", color: "Tomato", src:B4S },
   //  { id: 4, title: "SAMOVAR", textes: "presentation de SAMOVAR", color: "Tomato", src:B4S },
 ];
@@ -87,7 +87,7 @@ class App extends Component {
                     <Container id="section_2" >
                         <Hidden only={'xs'}>
                             <div md={12} xs={4} style={{height: "20em",
-                                borderRadius:"5px", marginLeft:"1em", marginTop:"1em", backgroundSize:"cover", paddingTop:"3em"}}>
+                                borderRadius:"5px", marginLeft:"1em", marginTop:"10vw", backgroundSize:"cover", paddingTop:"3em"}}>
                                 <Grid item  md={12} xs={4}></Grid>
                                 <Typography variant="h4"  gutterBottom style={{fontStyle: "italic", fontWeight:"lighter",paddingTop:"1em"}}>« Les bons  </Typography>
                                 <Grid md={12} xs={1}>
@@ -99,25 +99,23 @@ class App extends Component {
                                 il faut bien réfléchir à ce que l’on veut faire et au cadre dans lequel cela s’inscrit, avant même de commencer. »
                                         - Susan Kare   </p>
                                 </Grid>
-
-                                
                             </div>
                         </Hidden>
                         {/*-------------------------------------------------- Design component --------------------------------------------------*/}
-                        <div item xl={12}  md={12} xs={4} style={{height: "20em",color:"white",
-                                borderRadius:"5px", backgroundSize:"cover", paddingTop:"3em"}}>
+                        <div item xl={12}  md={12} xs={4} style={{color:"white",
+                                borderRadius:"5px", backgroundSize:"cover",}}>
                                 
                         <Grid item xl={12}  md={12} xs={12} style={{ borderRadius:"5px",
                             backgroundSize:"cover"}}>
                             <Hidden only={['sm', 'lg', 'md','xl']}>
-                                <Grid>
-                                    <Typography variant="h2" component="h2" > DEV.</Typography>
-                                </Grid>
+                               
+                                    <h1 style={{fontSize:"5em"}}> DESIGN</h1>
+                                
                             </Hidden>
                             <Hidden only={['xs']}>
-                                <Grid item xl={12} md={12} xs={12}>
+                                
                                     <h1 style={{fontSize:"5em"}} variant="h2" component="h2" > GRAPHISME & COMMUNICATION</h1>
-                                </Grid>
+                               
                             </Hidden>
                             {/* -------------------------------------------------- Dev component -------------------------------------------------- */}
                             
@@ -126,16 +124,17 @@ class App extends Component {
                         datas={DESIGN}/>
                         </Grid></div>
                     </Container>
-                    <Container  id="section_3" style={{ color:"white", paddingTop:"1em", marginTop:"15em"}} >
-                    <div item  md={12} xs={4} style={{height: "20em",color:"white",
+                    
+                    <Container  id="section_3" style={{ marginTop:"1em"}} >
+                        <div item xl={12} md={12} xs={4} style={{height: "20em",color:"white",
                                 borderRadius:"5px", marginLeft:"1em", backgroundSize:"cover", paddingTop:"3em"}}>
                                 
                         <Grid item  md={12} xs={12} style={{ borderRadius:"5px",
                             backgroundSize:"cover"}}>
                             <Hidden only={['sm', 'lg', 'md','xl']}>
-                                <Grid>
-                                    <Typography variant="h2" component="h2" > DEV.</Typography>
-                                </Grid>
+                                
+                                    <h1 style={{fontSize:"5em"}}> DEV.</h1>
+                                
                             </Hidden>
                             <Hidden only={['xs']}>
                                 <Grid item  md={12} xs={12}>
@@ -143,11 +142,12 @@ class App extends Component {
                                 </Grid>
                             </Hidden>
                             {/* -------------------------------------------------- Dev component -------------------------------------------------- */}
-                             
-                            <DEsignPage titre= "Forgeur d'Expériences Digitales : " subtitre= "Du Concept à la Réalité, Mon Parcours au Cœur de Vos Projets "
-                        content = "De la conception à la réalité, je mais en œuvre des projets numériques diversifiés. En tant que développeur web, taillé des sites vitrines, e-commerces et applications iOS/Android est ma passion. La fusionne du design et développement pour façonner des expériences digitales mémorables qui laissent une empreinte sur vos utilisateurs."
-                        datas={DEV}/>
-                        </Grid></div>
+                            <DEsignPage titre= "Forgeur d'Expériences Digitales : " 
+                            subtitre= "Du Concept à la Réalité, Mon Parcours au Cœur de Vos Projets "
+                            content = "De la conception à la réalité, je mais en œuvre des projets numériques diversifiés. En tant que développeur web, taillé des sites vitrines, e-commerces et applications iOS/Android est ma passion. La fusionne du design et développement pour façonner des expériences digitales mémorables qui laissent une empreinte sur vos utilisateurs."
+                            datas={DEV}/>
+                        </Grid>
+                        </div>
                     </Container>
             </Grid>
 

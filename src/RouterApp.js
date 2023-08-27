@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route, useLocation,} from "react-router-dom";
 import App from "./App";
-import MswwPage from "./msww";
+import MswwPage from "./Component/buldo/msww";
 
 export default function ModalGalleryExample() {
     return (
